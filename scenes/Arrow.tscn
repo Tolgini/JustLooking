@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_arrow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arrow"]
+size = Vector2(34, 6)
+
+[node name="Arrow" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+monitoring = true
+script = ExtResource("1_arrow")
+
+[node name="Shaft" type="Line2D" parent="."]
+points = PackedVector2Array(-18, 0, 16, 0)
+width = 3.0
+default_color = Color(0.76, 0.62, 0.36, 1)
+
+[node name="Tip" type="Polygon2D" parent="."]
+color = Color(0.83, 0.86, 0.9, 1)
+polygon = PackedVector2Array(16, -5, 26, 0, 16, 5)
+
+[node name="Fletching" type="Polygon2D" parent="."]
+color = Color(0.25, 0.42, 0.85, 1)
+polygon = PackedVector2Array(-18, -6, -27, -11, -23, 0, -27, 11, -18, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_arrow")

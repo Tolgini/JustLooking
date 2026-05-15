@@ -1,0 +1,260 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_ui"]
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ui")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stats" type="HBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_constants/separation = 26
+
+[node name="HealthLabel" type="Label" parent="HUD/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Leben: 5/5"
+
+[node name="CoinsLabel" type="Label" parent="HUD/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Coins: 0"
+
+[node name="WaveLabel" type="Label" parent="HUD/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Wave: 0"
+
+[node name="ScoreLabel" type="Label" parent="HUD/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Score: 0"
+
+[node name="HintLabel" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -42.0
+offset_right = -18.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+text = "WASD bewegen • Maus zielen • Linksklick schießen • Esc/P pausieren"
+
+[node name="StartMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = -170.0
+offset_right = 255.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="StartMenu/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="StartMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 34
+text = "Just Looking: Shadow Archer"
+
+[node name="DescriptionLabel" type="Label" parent="StartMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Überlebe Schattenwellen, sammle Coins und baue deinen Bogenschützen mit Upgrades aus."
+
+[node name="StartButton" type="Button" parent="StartMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Spiel starten"
+
+[node name="ControlsLabel" type="Label" parent="StartMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Steuerung: WASD / Pfeiltasten, Maus, Linksklick, Esc/P"
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -115.0
+offset_right = 180.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PauseMenu/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="PauseMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 30
+text = "Pause"
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Weiter"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Neu starten"
+
+[node name="UpgradeMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="UpgradeMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -205.0
+offset_right = 260.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UpgradeMenu/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="UpgradeMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 26
+text = "Upgrade wählen"
+
+[node name="DamageButton" type="Button" parent="UpgradeMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Mehr Schaden"
+
+[node name="ArrowSpeedButton" type="Button" parent="UpgradeMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Schnellere Pfeile"
+
+[node name="HealthButton" type="Button" parent="UpgradeMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Mehr maximale Leben"
+
+[node name="FireRateButton" type="Button" parent="UpgradeMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Schnellere Schussrate"
+
+[node name="MultishotButton" type="Button" parent="UpgradeMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Mehrfachschuss"
+
+[node name="GameOverMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="GameOverMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -145.0
+offset_right = 230.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameOverMenu/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="GameOverMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+text = "Game Over"
+
+[node name="FinalScoreLabel" type="Label" parent="GameOverMenu/Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+text = "Score: 0"
+
+[node name="RestartButton" type="Button" parent="GameOverMenu/Panel/VBox"]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "Nochmal spielen"

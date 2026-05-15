@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_game"]
+[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/UI.tscn" id="3_ui"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_game")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+enabled = true
+
+[node name="ArenaBackground" type="Polygon2D" parent="."]
+color = Color(0.035, 0.038, 0.06, 1)
+polygon = PackedVector2Array(-640, -360, 640, -360, 640, 360, -640, 360)
+
+[node name="ArenaBorder" type="Line2D" parent="."]
+points = PackedVector2Array(-600, -320, 600, -320, 600, 320, -600, 320, -600, -320)
+width = 5.0
+default_color = Color(0.22, 0.18, 0.34, 1)
+
+[node name="Moon" type="Polygon2D" parent="."]
+position = Vector2(470, -245)
+color = Color(0.66, 0.72, 0.9, 0.22)
+polygon = PackedVector2Array(0, -55, 32, -42, 51, -14, 48, 18, 27, 45, -6, 55, -36, 38, -54, 8, -48, -24, -24, -48)
+
+[node name="Ruin1" type="Polygon2D" parent="."]
+position = Vector2(-420, 210)
+color = Color(0.12, 0.12, 0.18, 1)
+polygon = PackedVector2Array(-40, -90, 35, -90, 35, 70, -40, 70)
+
+[node name="Ruin2" type="Polygon2D" parent="."]
+position = Vector2(390, 235)
+color = Color(0.1, 0.11, 0.17, 1)
+polygon = PackedVector2Array(-55, -65, 55, -65, 42, 70, -48, 70)
+
+[node name="Arrows" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+
+[node name="UI" parent="." instance=ExtResource("3_ui")]
